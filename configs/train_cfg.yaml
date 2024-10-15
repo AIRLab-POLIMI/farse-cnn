@@ -1,0 +1,38 @@
+seed: 123
+use_gpu: True
+
+model_cfg: 'configs/model/farsecnn_NCars.yaml'
+#init_state_mode: False
+
+dataset_name: 'NCars'
+frame_size: [128,128]
+
+batch_size: 16
+gradient_batch_size: 256 # equivalent batch size for gradient accumulation
+learning_rate: 1.0e-3
+
+transforms:
+  - name: 'RandomTranslate'
+    target_size: [128,128]
+  - name: 'RandomFlipLR'
+    sensor_size: [128,128,2]
+    probability: 0.5
+
+log_mode: None #'neptune'
+#neptune_api_key: {your api key}
+#neptune_project: {your project name}
+#neptune_log_model_checkpoints: True
+
+save_checkpoint: True 
+max_epoch: 130
+do_validation: False
+early_stopping: False
+#early_stopping_patience: 10
+#early_stopping_min_delta: 5.0e-4
+
+### Resume run
+#neptune_run_id: ''
+#resume_ckpt: ''
+
+### Initialize model
+#initialize_from_ckpt: ''

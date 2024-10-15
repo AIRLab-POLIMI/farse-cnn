@@ -1,0 +1,73 @@
+feature_mode: 'dp' # d = delay, p = polarity
+
+farsecnn_layers:
+  - name: 'SubmanifoldFARSEConv'
+    kernel_size: 1
+    hidden_size: 16
+  - name: 'BranchBlock'
+    merge_func: 'add'
+    branch_1:
+      - name: 'SubmanifoldFARSEConv'
+        kernel_size: 3
+        hidden_size: 16
+      - name: 'SubmanifoldFARSEConv'
+        kernel_size: 3
+        hidden_size: 16
+  - name: 'SparseMaxPool'
+    kernel_size: 2
+  - name: 'TemporalDropout'
+    window_size: 2
+  - name: 'BranchBlock'
+    merge_func: 'add'
+    branch_1:
+      - name: 'SubmanifoldFARSEConv'
+        kernel_size: 3
+        hidden_size: 32
+      - name: 'SubmanifoldFARSEConv'
+        kernel_size: 3
+        hidden_size: 32
+  - name: 'SparseMaxPool'
+    kernel_size: 2
+  - name: 'TemporalDropout'
+    window_size: 2
+  - name: 'BranchBlock'
+    merge_func: 'add'
+    branch_1:
+      - name: 'SubmanifoldFARSEConv'
+        kernel_size: 3
+        hidden_size: 64
+      - name: 'SubmanifoldFARSEConv'
+        kernel_size: 3
+        hidden_size: 64
+  - name: 'SparseMaxPool'
+    kernel_size: 2
+  - name: 'TemporalDropout'
+    window_size: 2
+  - name: 'BranchBlock'
+    merge_func: 'add'
+    branch_1:
+      - name: 'SubmanifoldFARSEConv'
+        kernel_size: 3
+        hidden_size: 128
+      - name: 'SubmanifoldFARSEConv'
+        kernel_size: 3
+        hidden_size: 128
+  - name: 'SparseMaxPool'
+    kernel_size: 2
+  - name: 'TemporalDropout'
+    window_size: 2
+  - name: 'BranchBlock'
+    merge_func: 'add'
+    branch_1:
+      - name: 'SubmanifoldFARSEConv'
+        kernel_size: 3
+        hidden_size: 256
+      - name: 'SubmanifoldFARSEConv'
+        kernel_size: 3
+        hidden_size: 256
+  - name: 'SparseAdaptiveAvgPool'
+    output_size: 1
+  - name: 'FARSEConv'
+    kernel_size: 1
+    stride: 1
+    hidden_size: 128

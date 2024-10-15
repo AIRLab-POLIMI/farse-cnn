@@ -1,0 +1,10 @@
+lightning==2.1.0
+matplotlib==3.9.2
+numpy==1.26.4
+pandas==2.2.3
+PyYAML==6.0.2
+scikit_learn==1.5.2
+seaborn==0.13.2
+tonic==1.5.0
+torch==1.13.0
+tqdm==4.63.0

@@ -1,0 +1,13 @@
+use_gpu: True
+
+model_cfg: 'configs/model/farsecnn_YOLO.yaml'
+
+dataset_name: 'Gen1'
+
+batch_size: 8
+
+checkpoint_path: {path to model checkpoint}
+
+output_path: 'data/evaluations/Gen1'
+
+generate_groundtruth: True # can change to False to avoid generating multiple times for the same dataset
