@@ -4,7 +4,7 @@ use_gpu: True
 model_cfg: 'configs/model/farsecnn_YOLO.yaml'
 
 detection: True
-dataset_name: 'Gen1_FULL'
+dataset_name: 'Gen1'
 
 batch_size: 8
 gradient_batch_size: 256 # equivalent batch size for gradient accumulation
