@@ -39,6 +39,11 @@ You can generate the annotation files running:
 python test_detect.py --test_cfg=configs/test_cfg_detect.yaml
 ```
 
+## DVS128 Gesture Model Checkpoint
+
+The checkpoint of our model trained on the **DVS128 Gesture** dataset can be downloaded [here](https://polimi365-my.sharepoint.com/:u:/r/personal/10584488_polimi_it/Documents/farsecnn_dvs128gesture_checkpoint.ckpt?csf=1&web=1&e=7KYZCB).
+The model was trained using the following configuration file: [./configs/train_cfg_dvs128gesture.yaml](./configs/train_cfg_dvs128gesture.yaml).
+
 ## Citation
 If you find this code useful, please cite:
 ```
@@ -46,6 +51,7 @@ If you find this code useful, please cite:
     author = {Santambrogio, Riccardo and Cannici, Marco and Matteucci, Matteo},
     title = {FARSE-CNN: Fully Asynchronous, Recurrent and Sparse Event-Based CNN},
     booktitle = {The European Conference on Computer Vision (ECCV)},
-    year = {2024}
+    year = {2024},
+    doi = {https://doi.org/10.1007/978-3-031-72949-2_1}
 }
 ```

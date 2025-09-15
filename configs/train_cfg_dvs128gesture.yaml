@@ -1,0 +1,27 @@
+seed: 123
+use_gpu: True
+
+model_cfg: 'configs/model/farsecnn_NCars.yaml'
+init_state_mode: True
+
+dataset_name: 'DVSGesture100ms'
+frame_size: [256,256]
+
+batch_size: 32
+gradient_batch_size: 256 # equivalent batch size for gradient accumulation
+learning_rate: 1.0e-3
+
+transforms:
+  - name: 'RandomTranslate'
+    target_size: [256,256]
+
+log_mode: None #'neptune'
+#neptune_api_key: {your api key}
+#neptune_project: {your project name}
+#neptune_log_model_checkpoints: True
+
+save_checkpoint: True
+max_epoch: 30
+do_validation: False
+early_stopping: False
+
